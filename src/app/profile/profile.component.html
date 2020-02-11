@@ -1,0 +1,44 @@
+<div class="profileConteiner">
+    <div class="conteiner pato45">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="avatarFrameoline">
+                    <img src="../../assets/img/generic_avatar.png" class="avatarImage img-fluid" />
+                </div>
+                <hr />
+                <div>
+                    <span>Cambiar Foto</span><br />
+                    <label class="custom-file-upload">
+                    <input type="file">
+                    Subir Avatar
+                  </label>
+                </div>
+            </div>
+            <div *ngIf="user" class="col-md-9">
+                <div>
+                    <label fixed>Nick</label>
+                    <input [(ngModel)]="user.nick" type="text" class="form-control" />
+                </div>
+                <div>
+                    <label fixed>Subnick</label>
+                    <input [(ngModel)]="user.subnick" type="text" class="form-control" />
+                </div>
+                <div>
+                    <label fixed>Email</label>
+                    <input [(ngModel)]="user.email" type="email" disabled class="form-control" />
+                </div>
+                <div>
+                    <label fixed>Staus</label>
+                    <select [(ngModel)]="user.status" class="form-control">
+                        <option value="online">Conectado</option>
+                        <option value="away">Ausente</option>
+                        <option value="busy">Ocupado</option>
+                        <option value="appear_offline">Desconectado</option>
+                    </select>
+                </div>
+                <hr/>
+                <a (click)="salveSettings()" class="btn btn-primary btn-block">Guardar</a>
+            </div>
+        </div>
+    </div>
+</div>
